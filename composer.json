@@ -1,0 +1,23 @@
+{
+    "name": "nova-framework/content-module",
+    "description": "A Content module for Nova Framework 4.x.",
+    "type": "nova-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Virgil-Adrian Teaca",
+            "email": "virgil@giulianaeassociati.com",
+            "homepage": "http://giulianaeassociati.com",
+            "role": "Developer"
+        }
+    ],
+    "require-dev": {
+        "nova-framework/system": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\Content\\": "./"
+        }
+    },
+    "minimum-stability": "dev"
+}
