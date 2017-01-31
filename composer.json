@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Content\\": "src/"
+            "Content\\": "src/"
         }
     },
     "minimum-stability": "dev"
