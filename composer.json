@@ -2,6 +2,7 @@
     "name": "nova-framework/content-module",
     "description": "A Content module for Nova Framework 4.x.",
     "type": "nova-module",
+    "homepage" : "http://www.novaframework.com/",
     "license": "MIT",
     "authors": [
         {
@@ -11,6 +12,10 @@
             "role": "Developer"
         }
     ],
+    "extra": {
+        "slug": "content",
+        "order": "8001"
+    },
     "require-dev": {
         "nova-framework/system": "~4.0"
     },
@@ -19,5 +24,6 @@
             "Content\\": "src/"
         }
     },
+    "prefer-stable": true,
     "minimum-stability": "dev"
 }
