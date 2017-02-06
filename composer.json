@@ -14,7 +14,7 @@
     ],
     "extra": {
         "slug": "content",
-        "order": "8001"
+        "order": "9001"
     },
     "require-dev": {
         "nova-framework/system": "~4.0"
