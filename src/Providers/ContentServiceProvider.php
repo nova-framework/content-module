@@ -14,7 +14,13 @@ class ContentServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-	//
+        $basePath = realpath(__DIR__ .'/../');
+
+        // Configure the Package.
+        $this->package('Content', 'content', $basePath);
+
+        //
+        require $basePath .DS .'Bootstrap.php';
     }
 
     /**
@@ -29,8 +35,9 @@ class ContentServiceProvider extends ServiceProvider
     public function register()
     {
         // Register additional Service Providers.
-        //$this->app->register('Content\Providers\AuthServiceProvider');
-        //$this->app->register('Content\Providers\EventServiceProvider');
+        $this->app->register('Content\Providers\AuthServiceProvider');
+        $this->app->register('Content\Providers\EventServiceProvider');
+        $this->app->register('Content\Providers\RouteServiceProvider');
     }
 
 }
