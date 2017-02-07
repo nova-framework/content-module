@@ -2,11 +2,23 @@
 
 namespace Content\Providers;
 
-use Nova\Support\ServiceProvider;
+use Nova\Module\Support\Providers\ModuleServiceProvider as ServiceProvider;
 
 
 class ContentServiceProvider extends ServiceProvider
 {
+    /**
+     * The additional provider class names.
+     *
+     * @var array
+     */
+    protected $providers = array(
+        'Content\Providers\AuthServiceProvider',
+        'Content\Providers\EventServiceProvider',
+        'Content\Providers\RouteServiceProvider',
+    );
+
+
     /**
      * Bootstrap the Application Events.
      *
@@ -14,13 +26,18 @@ class ContentServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $basePath = realpath(__DIR__ .'/../');
-
-        // Configure the Package.
-        $this->package('Content', 'content', $basePath);
+        parent::boot();
 
         //
-        require $basePath .DS .'Bootstrap.php';
+        $path = realpath(__DIR__ .'/../');
+
+        // Configure the Package.
+        $this->package('Content', 'content', $path);
+
+        // Bootstrap the Package.
+        $path = $path .DS .'Bootstrap.php';
+
+        $this->bootstrapFrom($path);
     }
 
     /**
@@ -34,10 +51,9 @@ class ContentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Register additional Service Providers.
-        $this->app->register('Content\Providers\AuthServiceProvider');
-        $this->app->register('Content\Providers\EventServiceProvider');
-        $this->app->register('Content\Providers\RouteServiceProvider');
+        parent::register();
+
+        //
     }
 
 }
