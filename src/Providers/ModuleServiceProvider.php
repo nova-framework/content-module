@@ -5,7 +5,7 @@ namespace Content\Providers;
 use Nova\Module\Support\Providers\ModuleServiceProvider as ServiceProvider;
 
 
-class ContentServiceProvider extends ServiceProvider
+class ModuleServiceProvider extends ServiceProvider
 {
     /**
      * The additional provider class names.
