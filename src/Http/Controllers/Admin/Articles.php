@@ -6,7 +6,7 @@
  * @version 3.0
  */
 
-namespace Content\Controllers\Admin;
+namespace Modules\Content\Http\Controllers\Admin;
 
 use Nova\Support\Facades\View;
 

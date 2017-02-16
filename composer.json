@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Content\\": "src/"
+            "Modules\\Content\\": "src/"
         }
     },
     "prefer-stable": true,

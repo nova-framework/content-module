@@ -10,8 +10,8 @@
 /** Define static routes. */
 
 // The Adminstration Routes.
-Route::group(array('prefix' => 'admin', 'namespace' => 'Content\Controllers\Admin'), function()
+$router->group(array('prefix' => 'admin', 'namespace' => 'Admin'), function($router)
 {
     // The User's Dashboard.
-    Route::get('articles', array('before' => 'auth', 'uses' => 'Articles@index'));
+    $router->get('articles', array('before' => 'auth', 'uses' => 'Articles@index'));
 });
